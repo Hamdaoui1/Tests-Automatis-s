@@ -22,8 +22,8 @@ function afficherMenu(): void {
     console.log("5. Test de la case à cocher et du bouton 'Continuer vers le choix de la banque'");
     console.log("6. Test de la liste des banques avec champ de recherche");
     console.log("7. Test du processus complet de connexion et récupération des données");
-    console.log("9. Test du processus complet de connexion et refus d'autorisation d'accès aux données");
-    console.log("8. Exécuter tous les tests");
+    console.log("8. Test du processus complet de connexion et refus d'autorisation d'accès aux données");
+    console.log("9. Exécuter tous les tests");
     console.log("0. Quitter");
 }
 
@@ -68,6 +68,16 @@ async function main(): Promise<void> {
                 console.log("\nÉtape 8 : Test du processus complet de connexion et refus d'autorisation d'accès aux données");
                 await runFullTestRefuse();
                 break;
+            case "9":
+                console.log("\nÉtape 9 : Tester tout les tests");
+                await runTestCGU();
+                await runTestPolicy();
+                await runTestEnSavoirPlus();
+                await runTestSidebar();
+                await runTestCheckboxAndContinue();
+                await runTestListBanksWithSearch();
+                await runFullTest();
+                await runFullTestRefuse();
             case "0":
                 console.log("Programme terminé.");
                 rl.close();

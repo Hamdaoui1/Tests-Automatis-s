@@ -12,64 +12,64 @@ async function runFullTest() {
         await page.waitForTimeout(2000);
 
         // Coche la case
-        await page.waitForSelector("input[type='checkbox']");
+        await page.waitForSelector("input[type='checkbox']", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("input[type='checkbox']");
         console.log("✅ Case à cocher sélectionnée.");
         await page.waitForTimeout(2000);
-
         // Cliquez sur le bouton "Continuer vers le choix de la banque"
-        await page.waitForSelector("button[aria-label='Continuer vers le choix de la banque']");
+        await page.waitForSelector("button[aria-label='Continuer vers le choix de la banque']", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("button[aria-label='Continuer vers le choix de la banque']");
         console.log("✅ Bouton 'Continuer vers le choix de la banque' cliqué.");
         await page.waitForTimeout(2000);
-
         // Sélectionnez "Algoan Bank"
         await page.waitForFunction(() => {
             const element = document.querySelector("div[aria-label='Algoan Bank']");
             return element  // Vérifie si l'élément est visible
         });
-        await page.click("div[aria-label='Algoan Bank']");
+        await page.click("div[aria-label='Algoan Bank']", { timeout: 5000 });
         console.log("✅ 'Algoan Bank' sélectionné ");
-       
+        await page.waitForTimeout(2000);
         // Cliquez sur "Poursuivre sur cet appareil"
         await page.waitForSelector("button[data-testid='connection-with-qr-code-button']", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("button[data-testid='connection-with-qr-code-button']");
         console.log("✅ 'Poursuivre sur cet appareil' cliqué.");
         await page.waitForTimeout(2000);
-
         // Cliquez sur "J’ai compris"
         await page.waitForSelector("button[data-testid='bank-redirection-button']", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("button[data-testid='bank-redirection-button']");
         console.log("✅ Bouton 'J’ai compris' cliqué.");
         await page.waitForTimeout(2000);
-
-
         // Sélectionnez le profil "Score élevé"
-        await page.waitForSelector("h3:has-text('Score élevé')");
+        await page.waitForSelector("h3:has-text('Score élevé')", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("h3:has-text('Score élevé')");
         console.log("✅ Profil 'Score élevé' sélectionné.");
         await page.waitForTimeout(2000);
-
         // Cliquez sur "Connecter la banque"
-        await page.waitForSelector("button:has-text('Connecter la banque')");
+        await page.waitForSelector("button:has-text('Connecter la banque')", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("button:has-text('Connecter la banque')");
         console.log("✅ Bouton 'Connecter la banque' cliqué.");
         await page.waitForTimeout(2000);
-
         // Cliquez sur "Autoriser l’accès"
-        await page.waitForSelector("button:has-text('Autoriser l’accès')");
+        await page.waitForSelector("button:has-text('Autoriser l’accès')", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("button:has-text('Autoriser l’accès')");
         console.log("✅ 'Autoriser l’accès' cliqué.");
         await page.waitForTimeout(2000);
-
         // Cliquez sur "Valider"
-        await page.waitForSelector("button:has-text('Valider')");
+        await page.waitForSelector("button:has-text('Valider')", { timeout: 5000 });
+        await page.waitForTimeout(2000);
         await page.click("button:has-text('Valider')");
         console.log("✅ Bouton 'Valider' cliqué.");
         await page.waitForTimeout(2000);
-
         //Cliquez sur "Poursuivre vers QA Prod Groov"
-            await page.waitForSelector("button:has-text('Poursuivre vers QA Prod Groov')");
+            await page.waitForSelector("button:has-text('Poursuivre vers QA Prod Groov')", { timeout: 5000 });
+            await page.waitForTimeout(2000);
             await page.click("button:has-text('Poursuivre vers QA Prod Groov')");
             console.log("✅ Bouton 'Poursuivre vers QA Prod Groov' cliqué.");
             await page.waitForTimeout(2000);

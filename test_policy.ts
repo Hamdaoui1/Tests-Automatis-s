@@ -7,11 +7,12 @@ export async function runTestPolicy() {
 
     try {
         // Charger la page principale
-        await page.goto("https://connect.algoan.com/v2/init?client_id=030d0c7dfcfdcfcc135c6cf5&redirect_uri=https://dashboard.algoan.com");
+        await page.goto("https://connect.algoan.com/v2/init?client_id=030d0c7dfcfdcfcc135c6cf5&redirect_uri=https://dashboard.algoan.com", { timeout: 10000 });
         console.log("Test du lien 'Politique de confidentialité'...");
         await page.waitForTimeout(2000);
         // Localiser le lien 'Politique de confidentialité' et cliquer dessus
         const policyLink = await page.waitForSelector("text=Politique de confidentialité", { timeout: 10000 });
+        await page.waitForTimeout(2000);
         await policyLink.click();
         console.log("✅ Lien 'Politique de confidentialité' cliqué.");
         await page.waitForTimeout(2000);
